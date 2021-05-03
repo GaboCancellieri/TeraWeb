@@ -7,3 +7,8 @@ p {
     color: #4c1a00;
     font-family: 'PT Serif Caption', serif !important;
 }
+
+.form-group.required .control-label:after { 
+    content:"*";
+    color:red;
+ }

@@ -11,6 +11,8 @@ import { ServiciosComponent } from './views/servicios/servicios.component';
 import { ClientesComponent } from './views/clientes/clientes.component';
 import { ContactoComponent } from './views/contacto/contacto.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { FooterComponent } from './layout/footer/footer.component';
     ContactoComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

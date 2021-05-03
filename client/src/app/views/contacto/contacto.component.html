@@ -3,7 +3,45 @@
         <div class="col" style="text-align: center;">
             <h1>¿Más información? Contáctenos</h1>
             <p>Estamos aquí para asistirlo. Contáctenos por mail o teléfono.</p>
-            <button class="btn btn-md rounded btn-dark" style="font-family: 'PT Serif Caption', serif; background: #4c1a00 !important;">Contactar</button>
+            <button class="btn btn-md rounded btn-dark" type="button" style="font-family: 'PT Serif Caption', serif; background: #4c1a00 !important;" data-toggle="modal" data-target="#staticBackdrop">Contactar</button>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Contáctenos</h5>
+            <button #closeBtn type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close" (click)="clear()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group required">
+                <label for="exampleInputEmail1" class="control-label">Email: </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="correo.email" name="email">
+            </div>
+            <div class="form-group required">
+                <label for="exampleInputNombre" class="control-label">Nombre: </label>
+                <input type="text" class="form-control" id="exampleInputNombre" [(ngModel)]="correo.nombre" name="nombre">
+            </div>
+            <div class="form-group required">
+                <label for="exampleInputApellido" class="control-label">Apellido: </label>
+                <input type="text" class="form-control" id="exampleInputApellido" [(ngModel)]="correo.apellido" name="apellido">
+            </div>
+            <div class="form-group required">
+                <label for="exampleInputAsunto" class="control-label">Asunto: </label>
+                <input type="text" class="form-control" id="exampleInputAsunto" [(ngModel)]="correo.asunto" name="asunto">
+            </div>
+            <div class="form-group required">
+                <label for="exampleInputTextArea" class="control-label">Mensaje: </label>
+                <textarea class="form-control" id="exampleInputTextArea" [(ngModel)]="correo.mensaje" name="mensaje"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="sendMail()" *ngIf="!isDisabled"
+            [disabled]="correo.email === '' || correo.nombre === '' || correo.apellido === '' || correo.asunto === '' || correo.mensaje === ''"><i class="fas fa-paper-plane"></i> Enviar</button>
+            <button type="button" class="btn btn-primary" *ngIf="isDisabled" [disabled]="true"><i class="fas fa-spinner fa-pulse"></i></button>
+        </div>
         </div>
     </div>
 </div>
