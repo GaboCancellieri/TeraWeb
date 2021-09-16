@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ts": "tsc -w",
-    "start": "nodemon ./dist/server.js",
+    "ts-dev": "tsc -w",
+    "ts": "tsc",
+    "dev": "nodemon ./dist/server.js",
+    "start": "node ./dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
